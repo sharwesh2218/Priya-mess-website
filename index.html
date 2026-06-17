@@ -1250,6 +1250,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .bk-full-width {
     grid-column: span 1;
   }
+  .bk-meals-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .bk-food-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .meal-chip, .food-chip {
+    min-width: 0;
+  }
   .bk-actions {
     flex-direction: column;
     align-items: center;
@@ -1258,6 +1271,30 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .bk-wa-btn, .bk-call-btn2 {
     width: 100%;
     max-width: 320px;
+  }
+}
+@media(max-width:480px) {
+  #booking {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .bk-glass-card {
+    padding: 30px 16px;
+    border-radius: 16px;
+  }
+  .bkt {
+    font-size: 1.6rem;
+  }
+  .bks {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+  .meal-chip span, .food-chip span {
+    padding: 12px 8px;
+    font-size: 0.76rem;
+    height: 44px;
   }
 }
 
