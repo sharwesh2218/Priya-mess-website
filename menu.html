@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="ta-en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Our Menu &amp; Dishes | Priya Mess &amp; Catering</title>
+<meta name="description" content="Explore our full menu — Sweets, Breakfast, Lunch and Dinner. Authentic South Indian cuisine crafted for every celebration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+Tamil:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C9A84C;--gold-light:#E8C96A;--gold-dim:#8A7240;
+  --orange:#E07B39;--orange-glow:#FF9A5C;
+  --cream:#FDFAF5;--cream-2:#F5EFE6;--cream-3:#EDE5D8;
+  --ink:#1C1409;--ink-dim:rgba(28,20,9,.55);
+  --glass:rgba(255,255,255,.72);--glass-b:rgba(201,168,76,.22);
+  --font-s:'Cormorant Garamond','Noto Serif Tamil',serif;
+  --font-n:'Outfit',sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--font-n);overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cur{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1),filter .3s;
+  filter:drop-shadow(0 0 6px rgba(201,168,76,.7))}
+#cur svg{display:block;transition:all .35s cubic-bezier(.34,1.56,.64,1);animation:cursor-float 3.5s ease-in-out infinite alternate}
+#cur.hov{transform:translate(-50%,-50%) scale(1.35);filter:drop-shadow(0 0 14px rgba(224,123,57,.9))}
+@keyframes cursor-float{
+  0%{transform:translate(0,0) rotate(0deg)}
+  50%{transform:translate(-1px,-3px) rotate(4deg)}
+  100%{transform:translate(1px,2px) rotate(-4deg)}
+}
+@media(hover:none){#cur{display:none!important}body{cursor:auto}}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:#EDE5D8}
+::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:4px}
+
+/* REVEAL */
+.rev{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rev.vis{opacity:1;transform:translateY(0)}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:24px;
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 48px);
+  max-width:1200px;
+  z-index:1000;
+  padding:14px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-radius:36px;
+  background:rgba(253,250,245,0.15);
+  backdrop-filter:blur(25px);
+  -webkit-backdrop-filter:blur(25px);
+  border:1px solid rgba(255,255,255,0.22);
+  box-shadow:0 8px 32px rgba(28,20,9,0.06), inset 0 1px 0 rgba(255,255,255,0.45);
+  transition:all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation:float-nav 6s ease-in-out infinite alternate;
+}
+@keyframes float-nav{
+  0%{transform:translateX(-50%) translateY(0)}
+  100%{transform:translateX(-50%) translateY(4px)}
+}
+nav.sc{
+  top:16px;
+  background:rgba(253,250,245,0.88);
+  border-color:rgba(201,168,76,0.25);
+  box-shadow:0 12px 40px rgba(201,168,76,0.1), inset 0 1px 0 rgba(255,255,255,0.6);
+  padding:10px 32px;
+}
+.nav-logo{
+  font-family:var(--font-s);
+  font-size:1.4rem;
+  font-weight:600;
+  color:var(--gold);
+  text-decoration:none;
+  letter-spacing:.02em;
+  line-height:1.15;
+}
+.nav-logo span{
+  display:block;
+  font-family:'Noto Serif Tamil',serif;
+  font-size:.65rem;
+  color:rgba(253,250,245,0.65);
+  letter-spacing:.1em;
+  margin-top:1px;
+  transition:color 0.4s var(--ease);
+}
+nav.sc .nav-logo span{
+  color:var(--ink-dim);
+}
+.nav-links{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  list-style:none;
+}
+.nav-links a{
+  font-size:.78rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(253,250,245,0.85);
+  text-decoration:none;
+  transition:all 0.4s var(--ease);
+  padding:8px 18px;
+  border-radius:24px;
+  display:block;
+}
+nav.sc .nav-links a{
+  color:var(--ink);
+}
+.nav-links a:hover{
+  color:var(--gold) !important;
+  background:rgba(255,255,255,0.12);
+  opacity:1;
+}
+nav.sc .nav-links a:hover{
+  background:rgba(201,168,76,0.08);
+}
+.nav-links a.active{
+  color:#FDFAF5 !important;
+  background:linear-gradient(135deg,var(--gold),var(--orange)) !important;
+  box-shadow:0 4px 15px rgba(201,168,76,0.35);
+  opacity:1;
+}
+.nav-cta-wrap{
+  display:block;
+}
+.nav-cta{
+  background:linear-gradient(135deg,var(--gold),var(--orange))!important;
+  color:#FDFAF5!important;
+  padding:10px 24px!important;
+  border-radius:24px!important;
+  font-weight:600!important;
+  font-size:.78rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  text-decoration:none;
+  display:inline-block;
+  transition:all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  box-shadow:0 4px 12px rgba(224,123,57,0.22);
+}
+.nav-cta:hover{
+  transform:scale(1.04) !important;
+  box-shadow:0 6px 18px rgba(224,123,57,0.35);
+  opacity:0.95;
+}
+.hbg{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  width:42px;
+  height:42px;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(253,250,245,0.2);
+  border:1px solid rgba(255,255,255,0.3);
+  backdrop-filter:blur(10px);
+  transition:all 0.3s var(--ease);
+}
+.hbg:hover{
+  background:rgba(201,168,76,0.15);
+  border-color:var(--gold);
+  transform:scale(1.05);
+}
+.hbg span{
+  display:block;
+  width:18px;
+  height:1.5px;
+  background:var(--gold);
+  transition:.3s;
+}
+.mnv{
+  position:fixed;
+  top:16px;
+  right:16px;
+  bottom:16px;
+  width:300px;
+  max-width:calc(100vw - 32px);
+  background:rgba(253,250,245,0.9);
+  backdrop-filter:blur(25px);
+  -webkit-backdrop-filter:blur(25px);
+  border:1px solid rgba(201,168,76,0.18);
+  border-radius:24px;
+  z-index:1001;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  transform:translateX(120%);
+  transition:transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:-8px 0 32px rgba(28,20,9,0.08);
+}
+.mnv.open{transform:translateX(0)}
+.mnv a{
+  font-family:var(--font-s);
+  font-size:1.8rem;
+  color:var(--ink);
+  text-decoration:none;
+  transition:all 0.3s;
+  padding:6px 20px;
+  border-radius:24px;
+}
+.mnv a:hover{
+  color:var(--gold);
+  background:rgba(201,168,76,0.08);
+}
+.mnv a[href$="#booking"] {
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  color: #FDFAF5 !important;
+  font-size: 1.1rem;
+  padding: 10px 24px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.mnvc{
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:1.3rem;
+  color:var(--ink-dim);
+  cursor:pointer;
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(28,20,9,0.04);
+  transition:all 0.3s;
+}
+.mnvc:hover{
+  background:rgba(201,168,76,0.15);
+  color:var(--gold);
+}
+
+/* ===== PAGES ===== */
+.page{display:none;min-height:100vh}
+.page.active{display:block}
+
+/* ===== MENU HERO ===== */
+.mhero{position:relative;height:72vh;display:flex;align-items:center;
+  justify-content:center;overflow:hidden;text-align:center}
+.mhero-bg{position:absolute;inset:0}
+.mhero-bg img{width:100%;height:100%;object-fit:cover;
+  filter:brightness(.42) saturate(1.15);
+  animation:zoomBg 18s ease-in-out infinite alternate}
+@keyframes zoomBg{from{transform:scale(1.05)}to{transform:scale(1.12)}}
+.mhero-ov{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(253,250,245,.15) 0%,rgba(253,250,245,.05) 50%,rgba(253,250,245,.6) 100%)}
+.mhero-bar{position:absolute;left:0;right:0;height:70px;background:var(--cream);z-index:2}
+.mhero-bar.top{top:0}.mhero-bar.bot{bottom:0}
+.mhero-cnt{position:relative;z-index:3;padding:0 20px}
+.mhero-eyebrow{display:inline-flex;align-items:center;gap:12px;
+  font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:22px;
+  animation:fiu 1s var(--ease) both}
+.mhero-eyebrow .ln{width:44px;height:1px;background:var(--gold)}
+@keyframes fiu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.mhero-title{font-family:var(--font-s);font-size:clamp(3rem,7vw,6rem);
+  font-weight:300;line-height:1.05;color:#fff;margin-bottom:18px;
+  animation:fiu 1s .2s var(--ease) both}
+.mhero-title em{font-style:italic;color:var(--gold-light)}
+.mhero-sub{font-family:var(--font-n);font-size:clamp(.9rem,1.5vw,1.1rem);
+  font-weight:300;color:rgba(255,255,255,.72);max-width:520px;
+  line-height:1.8;animation:fiu 1s .4s var(--ease) both}
+.mhero-tamil{font-family:'Noto Serif Tamil',serif;font-size:.9rem;
+  color:var(--gold-light);opacity:.8;display:block;margin-bottom:8px}
+
+/* ===== CATEGORY GRID ===== */
+.cat-section{padding:100px 60px;background:var(--cream)}
+.cat-header{text-align:center;margin-bottom:64px}
+.section-lbl{display:inline-flex;align-items:center;gap:12px;
+  font-size:.68rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px}
+.section-lbl::before,.section-lbl::after{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--font-s);font-size:clamp(2.2rem,4vw,3.5rem);
+  font-weight:300;color:var(--ink);line-height:1.1}
+.cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.cat-card{position:relative;overflow:hidden;border-radius:8px;
+  aspect-ratio:16/10;cursor:pointer;
+  border:1px solid var(--glass-b);
+  transition:transform .55s var(--ease),box-shadow .55s var(--ease)}
+.cat-card:hover{transform:translateY(-8px);
+  box-shadow:0 24px 70px rgba(201,168,76,.25)}
+.cat-card img{width:100%;height:100%;object-fit:cover;
+  filter:brightness(.52) saturate(1.1);
+  transition:transform .8s var(--ease),filter .6s}
+.cat-card:hover img{transform:scale(1.08);filter:brightness(.65) saturate(1.2)}
+.cat-card-ov{position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(12,8,3,.88) 0%,transparent 60%);
+  transition:background .4s}
+.cat-card:hover .cat-card-ov{background:linear-gradient(to top,rgba(12,8,3,.75) 0%,rgba(201,168,76,.08) 100%)}
+.cat-glow{position:absolute;inset:0;border-radius:8px;
+  box-shadow:inset 0 0 0 1.5px rgba(201,168,76,0);
+  transition:box-shadow .4s}
+.cat-card:hover .cat-glow{box-shadow:inset 0 0 0 1.5px rgba(201,168,76,.6)}
+.cat-card-body{position:absolute;bottom:0;left:0;right:0;padding:30px 28px}
+.cat-icon{font-size:2rem;margin-bottom:10px;display:block;
+  filter:drop-shadow(0 2px 8px rgba(201,168,76,.5))}
+.cat-count{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:6px}
+.cat-name{font-family:var(--font-s);font-size:2rem;font-weight:400;
+  color:#fff;line-height:1;margin-bottom:4px}
+.cat-name-tamil{font-family:'Noto Serif Tamil',serif;font-size:.8rem;
+  color:rgba(232,201,106,.75);display:block}
+.cat-arrow{display:inline-flex;align-items:center;gap:8px;
+  font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);margin-top:12px;
+  transform:translateX(-8px);opacity:0;
+  transition:transform .4s,opacity .4s}
+.cat-card:hover .cat-arrow{transform:translateX(0);opacity:1}
+
+/* ===== DETAIL PAGE ===== */
+.det-page{padding-bottom:80px}
+
+/* Detail banner */
+.det-banner{position:relative;height:52vh;display:flex;
+  align-items:flex-end;justify-content:flex-start;overflow:hidden}
+.det-banner img{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;filter:brightness(.4) saturate(1.1);
+  animation:zoomBg 20s ease-in-out infinite alternate}
+.det-banner-ov{position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,5,2,.92) 0%,rgba(8,5,2,.2) 100%)}
+.det-banner-bar{position:absolute;top:0;left:0;right:0;height:70px;
+  background:var(--cream);z-index:2}
+.det-banner-cnt{position:relative;z-index:3;padding:0 60px 50px}
+.back-btn{display:inline-flex;align-items:center;gap:8px;
+  font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;cursor:pointer;
+  margin-bottom:20px;transition:gap .3s}
+.back-btn:hover{gap:12px}
+.back-btn::before{content:'\2190';font-size:1rem}
+.det-eyebrow{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;display:block}
+.det-title{font-family:var(--font-s);font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:300;color:#fff;line-height:1.05}
+.det-title em{font-style:italic;color:var(--gold-light)}
+.det-count-badge{display:inline-block;margin-top:14px;
+  background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);
+  padding:5px 16px;border-radius:20px;font-size:.72rem;
+  letter-spacing:.1em;color:var(--gold-light)}
+
+/* Search bar */
+.search-wrap{padding:40px 60px 0;max-width:700px}
+.search-box{position:relative}
+.search-box input{width:100%;padding:14px 20px 14px 50px;
+  background:#fff;border:1.5px solid var(--glass-b);border-radius:4px;
+  font-family:var(--font-n);font-size:.95rem;color:var(--ink);outline:none;
+  transition:border-color .3s,box-shadow .3s;
+  box-shadow:0 2px 20px rgba(201,168,76,.08)}
+.search-box input::placeholder{color:rgba(28,20,9,.35)}
+.search-box input:focus{border-color:var(--gold);box-shadow:0 4px 30px rgba(201,168,76,.18)}
+.search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);
+  color:var(--gold-dim);font-size:1rem}
+
+/* Tab nav (Lunch) */
+.tab-nav{display:flex;gap:0;margin:40px 60px 0;
+  border-bottom:1.5px solid var(--glass-b);max-width:400px}
+.tab-btn{flex:1;padding:12px 0;font-family:var(--font-n);
+  font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;
+  background:none;border:none;color:var(--ink-dim);cursor:pointer;
+  position:relative;transition:color .3s}
+.tab-btn::after{content:'';position:absolute;bottom:-1.5px;left:0;
+  width:0;height:2px;background:var(--gold);transition:width .4s var(--ease)}
+.tab-btn.active{color:var(--gold)}
+.tab-btn.active::after{width:100%}
+.tab-panel{display:none}.tab-panel.active{display:block}
+
+/* Section heading inside detail */
+.sub-heading{padding:48px 60px 16px;display:flex;align-items:center;gap:14px}
+.sub-heading-line{flex:1;height:1px;
+  background:linear-gradient(to right,var(--glass-b),transparent)}
+.sub-heading-text{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);white-space:nowrap}
+
+/* Dish rows */
+.dish-list{padding:0 60px}
+.dish-row{display:flex;align-items:center;justify-content:space-between;
+  padding:16px 22px;border-radius:4px;
+  border-bottom:1px solid rgba(201,168,76,.12);
+  transition:background .3s,transform .3s,box-shadow .3s;
+  cursor:default}
+.dish-row:last-child{border-bottom:none}
+.dish-row:hover{background:rgba(201,168,76,.07);
+  transform:translateX(4px);
+  box-shadow:2px 0 0 var(--gold) inset}
+.dish-en{font-family:var(--font-s);font-size:1.1rem;font-weight:400;
+  color:var(--ink);letter-spacing:.01em}
+.dish-ta{font-family:'Noto Serif Tamil',serif;font-size:.88rem;
+  color:var(--gold-dim);text-align:right;letter-spacing:.03em}
+.dish-row.hidden{display:none}
+
+/* Drink rows special */
+.drink-row .dish-en::before{content:'\2615\00a0';font-size:.85rem}
+
+/* No-results */
+.no-results{padding:60px;text-align:center;
+  font-family:var(--font-s);font-size:1.3rem;
+  color:var(--ink-dim);font-style:italic}
+
+/* Veg / Non-veg badge */
+.badge-veg{display:inline-block;width:14px;height:14px;
+  border:1.5px solid #2d7a3a;border-radius:2px;margin-right:8px;
+  position:relative;flex-shrink:0}
+.badge-veg::after{content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);width:6px;height:6px;
+  background:#2d7a3a;border-radius:50%}
+.badge-nonveg{display:inline-block;width:14px;height:14px;
+  border:1.5px solid #c0392b;border-radius:2px;margin-right:8px;
+  position:relative;flex-shrink:0}
+.badge-nonveg::after{content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);border-left:6px solid transparent;
+  border-right:6px solid transparent;border-bottom:9px solid #c0392b;
+  width:0;height:0}
+
+.dish-left{display:flex;align-items:center}
+
+/* Category sticky strip */
+.sticky-cats{position:sticky;top:70px;z-index:100;
+  background:rgba(253,250,245,.95);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--glass-b);
+  display:flex;gap:0;overflow-x:auto;scrollbar-width:none;
+  padding:0 60px;box-shadow:0 4px 20px rgba(201,168,76,.08)}
+.sticky-cats::-webkit-scrollbar{display:none}
+.scat-btn{flex:0 0 auto;padding:14px 28px;
+  font-family:var(--font-n);font-size:.72rem;letter-spacing:.15em;
+  text-transform:uppercase;background:none;border:none;
+  color:var(--ink-dim);cursor:pointer;position:relative;
+  transition:color .3s;white-space:nowrap}
+.scat-btn::after{content:'';position:absolute;bottom:0;left:0;
+  width:0;height:2px;background:var(--gold);transition:width .4s var(--ease)}
+.scat-btn.active{color:var(--gold)}
+.scat-btn.active::after{width:100%}
+
+/* Footer mini */
+.mini-footer{background:#0F0B06;padding:40px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(201,168,76,.15)}
+.mf-logo{font-family:var(--font-s);font-size:1.4rem;
+  font-weight:600;color:var(--gold);text-decoration:none}
+.mf-copy{font-size:.75rem;color:rgba(245,240,232,.3)}
+.mf-link{font-size:.78rem;color:var(--gold-dim);
+  text-decoration:none;letter-spacing:.08em}
+.mf-link:hover{color:var(--gold)}
+
+/* Responsive */
+@media(max-width:1024px){
+  nav{
+    padding:12px 24px;
+    border-radius:28px;
+    width:calc(100% - 32px);
+    top:16px;
+  }
+  nav.sc{
+    padding:10px 24px;
+    top:12px;
+  }
+  .nav-links, .nav-cta-wrap{display:none}
+  .hbg{display:flex}
+  .cat-section{padding:80px 28px}
+  .det-banner-cnt,.search-wrap,.tab-nav,.dish-list,.sub-heading,.sticky-cats{
+    padding-left:28px;padding-right:28px}
+  .mini-footer{padding:30px 28px;flex-direction:column;gap:14px;text-align:center}
+}
+@media(max-width:640px){
+  .cat-grid{grid-template-columns:1fr}
+  .det-banner-cnt{padding:0 20px 40px}
+  .search-wrap{padding:28px 20px 0}
+  .tab-nav{margin:28px 20px 0}
+  .dish-list{padding:0 20px}
+  .sub-heading{padding:36px 20px 12px}
+  .sticky-cats{padding:0 20px}
+  .dish-row{padding:14px 12px}
+  .det-title{font-size:2.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cur"></div>
+
+<!-- MOBILE NAV -->
+<div class="mnv" id="mnv">
+  <span class="mnvc" id="mnvc">&#x2715;</span>
+  <a href="index.html">Home</a>
+  <a href="index.html#why">Why Us</a>
+  <a href="index.html#services">Services</a>
+  <a href="menu.html" class="active">Menu</a>
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#booking">Book Now</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Priya Mess
+    <span>&#2986;&#3007;&#2992;&#3007;&#2991;&#3006; &#2990;&#3014;&#3000;&#3021; &amp; &#2965;&#3015;&#2975;&#3021;&#2975;&#2992;&#3007;&#2969;&#3021;</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="menu.html" class="active">Menu</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+  </ul>
+  <div class="nav-cta-wrap">
+    <a href="index.html#booking" class="nav-cta">Book Now</a>
+  </div>
+  <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ======================================================
+     PAGE 1 — MAIN MENU (category grid)
+====================================================== -->
+<div class="page active" id="page-main">
+
+  <!-- Hero -->
+  <section class="mhero">
+    <div class="mhero-bg"><img src="menu_hero_banner.png" alt="Our Menu"></div>
+    <div class="mhero-ov"></div>
+    <div class="mhero-bar top"></div>
+    <div class="mhero-bar bot"></div>
+    <div class="mhero-cnt">
+      <div class="mhero-eyebrow"><span class="ln"></span>Priya Mess &amp; Catering<span class="ln"></span></div>
+      <h1 class="mhero-title">
+        <span class="mhero-tamil">&#2986;&#3006;&#2992;&#2990;&#3021;&#2986;&#2992;&#3007;&#2991;&#2990;&#3006;&#2985; &#2970;&#3009;&#2997;&#3016;&#2991;&#3006;&#2985; &#2953;&#2979;&#2997;&#3009;&#2965;&#2995;&#3021;</span>
+        Our <em>Dishes</em>
+      </h1>
+      <p class="mhero-sub">Explore our delicious menu crafted for every celebration</p>
+    </div>
+  </section>
+
+  <!-- Category Grid -->
+  <section class="cat-section">
+    <div class="cat-header rev">
+      <div class="section-lbl">Choose Your Category</div>
+      <h2 class="section-title">What Would You<br>Like to <em style="font-style:italic;color:var(--gold)">Savour?</em></h2>
+    </div>
+
+    <div class="cat-grid">
+
+      <!-- SWEETS -->
+      <div class="cat-card rev" onclick="openCategory('sweets')" tabindex="0" role="button" aria-label="Sweets menu">
+        <img src="sweets_category.png" alt="Sweets">
+        <div class="cat-card-ov"></div>
+        <div class="cat-glow"></div>
+        <div class="cat-card-body">
+          <span class="cat-icon">&#x1F36C;</span>
+          <div class="cat-count">8 Dishes</div>
+          <div class="cat-name">Sweets</div>
+          <span class="cat-name-tamil">&#2951;&#2985;&#3007;&#2986;&#3021;&#2986;&#3009; &#2997;&#2965;&#3016;&#2965;&#2995;&#3021;</span>
+          <div class="cat-arrow">Explore &#x2192;</div>
+        </div>
+      </div>
+
+      <!-- BREAKFAST -->
+      <div class="cat-card rev" style="transition-delay:.12s" onclick="openCategory('breakfast')" tabindex="0" role="button" aria-label="Breakfast menu">
+        <img src="breakfast_category.png" alt="Breakfast">
+        <div class="cat-card-ov"></div>
+        <div class="cat-glow"></div>
+        <div class="cat-card-body">
+          <span class="cat-icon">&#x1F373;</span>
+          <div class="cat-count">17 Dishes &nbsp;|&nbsp; 3 Drinks</div>
+          <div class="cat-name">Breakfast</div>
+<span class="cat-name-tamil">&#2965;&#3006;&#2994;&#3016; &#2953;&#2979;&#2997;&#3009;</span>
+          <div class="cat-arrow">Explore &#x2192;</div>
+        </div>
+      </div>
+
+      <!-- LUNCH -->
+      <div class="cat-card rev" style="transition-delay:.24s" onclick="openCategory('lunch')" tabindex="0" role="button" aria-label="Lunch menu">
+        <img src="lunch_category.png" alt="Lunch">
+        <div class="cat-card-ov"></div>
+        <div class="cat-glow"></div>
+        <div class="cat-card-body">
+          <span class="cat-icon">&#x1F372;</span>
+          <div class="cat-count">Veg &amp; Non-Veg &nbsp;|&nbsp; 36+ Dishes</div>
+          <div class="cat-name">Lunch</div>
+<span class="cat-name-tamil">&#2990;&#2980;&#3007;&#2991; &#2953;&#2979;&#2997;&#3009;</span>
+          <div class="cat-arrow">Explore &#x2192;</div>
+        </div>
+      </div>
+
+      <!-- DINNER -->
+      <div class="cat-card rev" style="transition-delay:.36s" onclick="openCategory('dinner')" tabindex="0" role="button" aria-label="Dinner menu">
+        <img src="dinner_category.png" alt="Dinner">
+        <div class="cat-card-ov"></div>
+        <div class="cat-glow"></div>
+        <div class="cat-card-body">
+          <span class="cat-icon">&#x1F319;</span>
+          <div class="cat-count">9 Dishes &nbsp;|&nbsp; 3 Drinks</div>
+          <div class="cat-name">Dinner</div>
+<span class="cat-name-tamil">&#2951;&#2992;&#2997;&#3009; &#2953;&#2979;&#2997;&#3009;</span>
+          <div class="cat-arrow">Explore &#x2192;</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Mini footer -->
+  <footer class="mini-footer">
+    <a href="index.html" class="mf-logo">Priya Mess</a>
+    <span class="mf-copy">&#169; 2026 Priya Mess &amp; Catering</span>
+    <a href="index.html#booking" class="mf-link">Book Now &#x2192;</a>
+  </footer>
+</div>
+
+<!-- ======================================================
+     PAGE 2 — SWEETS
+====================================================== -->
+<div class="page" id="page-sweets">
+  <div class="det-page">
+    <div class="det-banner">
+      <img src="sweets_category.png" alt="Sweets">
+      <div class="det-banner-ov"></div>
+      <div class="det-banner-bar"></div>
+      <div class="det-banner-cnt">
+        <div class="back-btn" onclick="goBack()" tabindex="0" role="button">Back to Menu</div>
+        <span class="det-eyebrow">&#x1F36C; &nbsp;Sweet Delights</span>
+        <h1 class="det-title">Sweets &mdash;<br><em>&#2951;&#2985;&#3007;&#2986;&#3021;&#2986;&#3009; &#2997;&#2965;&#3016;&#2965;&#2995;&#3021;</em></h1>
+        <span class="det-count-badge">8 Dishes</span>
+      </div>
+    </div>
+
+    <div class="search-wrap"><div class="search-box">
+      <span class="search-icon">&#x1F50D;</span>
+      <input type="text" id="search-sweets" placeholder="Search sweets..." oninput="filterDishes('sweets',this.value)">
+    </div></div>
+
+    <div class="dish-list" id="list-sweets">
+      <div class="dish-row"><div class="dish-left"><span>Sooji Kesari</span></div><span class="dish-ta">&#2992;&#2997;&#3016; &#2965;&#3015;&#2970;&#2992;&#3007;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Pineapple Kesari</span></div><span class="dish-ta">&#2949;&#2985;&#3021;&#2985;&#3006;&#2970;&#3007; &#2965;&#3015;&#2970;&#2992;&#3007;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Bread Halwa</span></div><span class="dish-ta">&#2986;&#3007;&#2992;&#3015;&#2975;&#3021; &#2949;&#2994;&#3021;&#2997;&#3006;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Wheat Halwa</span></div><span class="dish-ta">&#2965;&#3019;&#2980;&#3009;&#2990;&#3016; &#2949;&#2994;&#3021;&#2997;&#3006;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Milk Halwa</span></div><span class="dish-ta">&#2986;&#3006;&#2994;&#3021; &#2949;&#2994;&#3021;&#2997;&#3006;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Carrot Halwa</span></div><span class="dish-ta">&#2965;&#3015;&#2992;&#2975;&#3021; &#2949;&#2994;&#3021;&#2997;&#3006;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Ajmeer Cake</span></div><span class="dish-ta">&#2949;&#2972;&#3021;&#2990;&#3008;&#2992;&#3021; &#2965;&#3015;&#2965;&#3021;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Gulab Jamun</span></div><span class="dish-ta">&#2965;&#3009;&#2994;&#3006;&#2986;&#3021; &#2972;&#3006;&#2990;&#3009;&#2985;&#3021;</span></div>
+      <div class="no-results" style="display:none" id="no-sweets">No dishes found</div>
+    </div>
+  </div>
+  <footer class="mini-footer"><a href="index.html" class="mf-logo">Priya Mess</a><span class="mf-copy">&#169; 2026 Priya Mess &amp; Catering</span><a href="index.html#booking" class="mf-link">Book Now &#x2192;</a></footer>
+</div>
+
+<!-- ======================================================
+     PAGE 3 — BREAKFAST
+====================================================== -->
+<div class="page" id="page-breakfast">
+  <div class="det-page">
+    <div class="det-banner">
+      <img src="breakfast_category.png" alt="Breakfast">
+      <div class="det-banner-ov"></div>
+      <div class="det-banner-bar"></div>
+      <div class="det-banner-cnt">
+        <div class="back-btn" onclick="goBack()" tabindex="0" role="button">Back to Menu</div>
+        <span class="det-eyebrow">&#x1F373; &nbsp;Morning Delights</span>
+<h1 class="det-title">Breakfast &mdash;<br><em>&#2965;&#3006;&#2994;&#3016; &#2953;&#2979;&#2997;&#3009;</em></h1>
+        <span class="det-count-badge">17 Dishes &nbsp;+&nbsp; 3 Drinks</span>
+      </div>
+    </div>
+    <div class="search-wrap"><div class="search-box">
+      <span class="search-icon">&#x1F50D;</span>
+      <input type="text" id="search-breakfast" placeholder="Search breakfast items..." oninput="filterDishes('breakfast',this.value)">
+    </div></div>
+
+    <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F373; Breakfast Items</span><div class="sub-heading-line"></div></div>
+    <div class="dish-list" id="list-breakfast">
+      <div class="dish-row"><div class="dish-left"><span>Idly</span></div><span class="dish-ta">&#2951;&#2975;&#3021;&#2994;&#3007;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Heart Idly</span></div><span class="dish-ta">&#3001;&#3006;&#2992;&#3021;&#2975;&#3021; &#2951;&#2975;&#3021;&#2994;&#3007;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Uthappam</span></div><span class="dish-ta">&#2954;&#2980;&#3021;&#2980;&#3006;&#2986;&#3021;&#2986;&#2990;&#3021;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Kadhamba Uthappam</span></div><span class="dish-ta">&#2965;&#2980;&#2990;&#3021;&#2986; &#2954;&#2980;&#3021;&#2980;&#3006;&#2986;&#3021;&#2986;&#2990;&#3021;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Podi Uthappam</span></div><span class="dish-ta">&#2986;&#3018;&#2975;&#3007; &#2954;&#2980;&#3021;&#2980;&#3006;&#2986;&#3021;&#2986;&#2990;&#3021;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Poori</span></div><span class="dish-ta">&#2986;&#3010;&#2992;&#3007;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Ghee Pongal</span></div><span class="dish-ta">&#2984;&#3014;&#2991;&#3021; &#2986;&#3018;&#2969;&#3021;&#2965;&#2994;&#3021;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Semiya Kichadi</span></div><span class="dish-ta">&#2970;&#3015;&#2990;&#3007;&#2991;&#3006; &#2965;&#3007;&#2970;&#3021;&#2970;&#2975;&#3007;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Rava Kichadi</span></div><span class="dish-ta">&#2992;&#2997;&#3006; &#2965;&#3007;&#2970;&#3021;&#2970;&#2975;&#3007;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Dosa</span></div><span class="dish-ta">&#2980;&#3019;&#2970;&#3016;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Podi Dosa</span></div><span class="dish-ta">&#2986;&#3018;&#2975;&#3007; &#2980;&#3019;&#2970;&#3016;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Rava Dosa</span></div><span class="dish-ta">&#2992;&#2997;&#3006; &#2980;&#3019;&#2970;&#3016;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Ada Dosa</span></div><span class="dish-ta">&#2949;&#2975;&#3016; &#2980;&#3019;&#2970;&#3016;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Idiyappam</span></div><span class="dish-ta">&#2951;&#2975;&#3007;&#2991;&#3006;&#2986;&#3021;&#2986;&#2990;&#3021;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Ulundhu Vada</span></div><span class="dish-ta">&#2953;&#2995;&#3009;&#2984;&#3021;&#2980;&#3009; &#2997;&#2975;&#3016;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Paruppu Vada</span></div><span class="dish-ta">&#2986;&#2992;&#3009;&#2986;&#3021;&#2986;&#3009; &#2997;&#2975;&#3016;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Bonda</span></div><span class="dish-ta">&#2986;&#3019;&#2979;&#3021;&#2975;&#3006;</span></div>
+      <div class="no-results" style="display:none" id="no-breakfast">No items found</div>
+    </div>
+
+    <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x2615; Drinks</span><div class="sub-heading-line"></div></div>
+    <div class="dish-list">
+      <div class="dish-row drink-row"><div class="dish-left"><span>Tea</span></div><span class="dish-ta">&#2980;&#3015;&#2985;&#3008;&#2992;&#3021;</span></div>
+      <div class="dish-row drink-row"><div class="dish-left"><span>Coffee</span></div><span class="dish-ta">&#2965;&#3006;&#2986;&#3007;</span></div>
+      <div class="dish-row drink-row"><div class="dish-left"><span>Badam Milk</span></div><span class="dish-ta">&#2986;&#3006;&#2980;&#3006;&#2990;&#3021; &#2986;&#3006;&#2994;&#3021;</span></div>
+    </div>
+  </div>
+  <footer class="mini-footer"><a href="index.html" class="mf-logo">Priya Mess</a><span class="mf-copy">&#169; 2026 Priya Mess &amp; Catering</span><a href="index.html#booking" class="mf-link">Book Now &#x2192;</a></footer>
+</div>
+
+<!-- ======================================================
+     PAGE 4 — LUNCH
+====================================================== -->
+<div class="page" id="page-lunch">
+  <div class="det-page">
+    <div class="det-banner">
+      <img src="lunch_category.png" alt="Lunch">
+      <div class="det-banner-ov"></div>
+      <div class="det-banner-bar"></div>
+      <div class="det-banner-cnt">
+        <div class="back-btn" onclick="goBack()" tabindex="0" role="button">Back to Menu</div>
+        <span class="det-eyebrow">&#x1F372; &nbsp;Midday Feast</span>
+<h1 class="det-title">Lunch &mdash;<br><em>&#2990;&#2980;&#3007;&#2991; &#2953;&#2979;&#2997;&#3009;</em></h1>
+        <span class="det-count-badge">Veg &amp; Non-Veg &nbsp;|&nbsp; 36+ Dishes</span>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tab-nav" id="lunch-tabs">
+      <button class="tab-btn active" onclick="switchTab('veg')" id="tab-veg">&#x1F33F; Vegetarian</button>
+      <button class="tab-btn" onclick="switchTab('nonveg')" id="tab-nonveg">&#x1F357; Non-Vegetarian</button>
+    </div>
+
+    <!-- Search -->
+    <div class="search-wrap"><div class="search-box">
+      <span class="search-icon">&#x1F50D;</span>
+      <input type="text" id="search-lunch" placeholder="Search lunch dishes..." oninput="filterDishes('lunch',this.value)">
+    </div></div>
+
+    <!-- VEG TAB -->
+    <div class="tab-panel active" id="panel-veg">
+      <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F33F; Main Dishes</span><div class="sub-heading-line"></div></div>
+      <div class="dish-list" id="list-lunch-veg-main">
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Veg Meals</span></div><span class="dish-ta">&#2970;&#3016;&#2997; &#2953;&#2979;&#2997;&#3009;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Tomato Rice</span></div><span class="dish-ta">&#2980;&#2965;&#3021;&#2965;&#3006;&#2995;&#3007; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Veg Biryani</span></div><span class="dish-ta">&#2997;&#3014;&#2972;&#3021; &#2986;&#3007;&#2992;&#3007;&#2991;&#3006;&#2979;&#3007;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Mushroom Biryani</span></div><span class="dish-ta">&#2965;&#3006;&#2995;&#3006;&#2985;&#3021; &#2986;&#3007;&#2992;&#3007;&#2991;&#3006;&#2979;&#3007;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Alangara Saapadu</span></div><span class="dish-ta">&#2949;&#2994;&#2969;&#3021;&#2965;&#3006;&#2992; &#2970;&#3006;&#2986;&#3021;&#2986;&#3006;&#2975;&#3009;</span></div>
+      </div>
+
+      <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F35A; Variety Rice</span><div class="sub-heading-line"></div></div>
+      <div class="dish-list" id="list-lunch-veg-rice">
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Sweet Pongal</span></div><span class="dish-ta">&#2970;&#2992;&#3021;&#2965;&#3021;&#2965;&#2992;&#3016; &#2986;&#3018;&#2969;&#3021;&#2965;&#2994;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Lemon Rice</span></div><span class="dish-ta">&#2958;&#2994;&#3009;&#2990;&#3007;&#2970;&#3021;&#2970;&#3016; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Tamarind Rice</span></div><span class="dish-ta">&#2986;&#3009;&#2995;&#3007; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Coconut Rice</span></div><span class="dish-ta">&#2980;&#3015;&#2969;&#3021;&#2965;&#3006;&#2991;&#3021; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Mango Rice</span></div><span class="dish-ta">&#2990;&#3006;&#2969;&#3021;&#2965;&#3006;&#2991;&#3021; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Mint Rice</span></div><span class="dish-ta">&#2986;&#3009;&#2980;&#3007;&#2985;&#3006; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Pepper Rice</span></div><span class="dish-ta">&#2990;&#3007;&#2995;&#2965;&#3009; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Veg Pulao</span></div><span class="dish-ta">&#2997;&#3014;&#2972;&#3021; &#2986;&#3009;&#2994;&#3006;&#2997;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Curd Rice</span></div><span class="dish-ta">&#2980;&#2991;&#3007;&#2992;&#3021; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Coriander Rice</span></div><span class="dish-ta">&#2965;&#3018;&#2980;&#3021;&#2980;&#2990;&#2994;&#3021;&#2994;&#3007; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Rock Sugar Rice</span></div><span class="dish-ta">&#2965;&#2993;&#3021;&#2965;&#2979;&#3021;&#2975;&#3009; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Sambar Rice</span></div><span class="dish-ta">&#2970;&#3006;&#2990;&#3021;&#2986;&#3006;&#2992;&#3021; &#2970;&#3006;&#2980;&#2990;&#3021;</span></div>
+      </div>
+
+      <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F96C; Side Dishes</span><div class="sub-heading-line"></div></div>
+      <div class="dish-list" id="list-lunch-veg-sides">
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Bengal Gram Dal + Snake Gourd Kootu</span></div><span class="dish-ta">&#2965;&#2975;&#2994;&#3016; &#2986;&#2992;&#3009;&#2986;&#3021;&#2986;&#3009; + &#2986;&#3009;&#2975;&#2994;&#2969;&#3021;&#2965;&#3006;&#2991;&#3021; &#2965;&#3010;&#2975;&#3021;&#2975;&#3009;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Aviyal</span></div><span class="dish-ta">&#2949;&#2997;&#3007;&#2991;&#2994;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Mixed Vegetable Poriyal</span></div><span class="dish-ta">&#2965;&#2980;&#2990;&#3021;&#2986; &#2986;&#3018;&#2992;&#3007;&#2991;&#2994;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Mashed Potato</span></div><span class="dish-ta">&#2953;&#2992;&#3009;&#2995;&#3016;&#2965;&#3021;&#2965;&#3007;&#2996;&#2969;&#3021;&#2965;&#3009; &#2990;&#2970;&#3007;&#2991;&#2994;&#3021;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Elephant Foot Yam Fry</span></div><span class="dish-ta">&#2970;&#3015;&#2985;&#3016;&#2965;&#3021;&#2965;&#3007;&#2996;&#2969;&#3021;&#2965;&#3009; &#2997;&#2993;&#3009;&#2997;&#2994;&#3021;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Veg Liver Gravy</span></div><span class="dish-ta">&#2997;&#3014;&#2972;&#3021; &#2994;&#3007;&#2997;&#2992;&#3021; &#2965;&#3007;&#2992;&#3015;&#2997;&#3007;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Cauliflower 65</span></div><span class="dish-ta">&#2965;&#3006;&#2994;&#3007;&#2947;&#2986;&#3021;&#2995;&#2997;&#2992;&#3021; 65</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Mushroom 65</span></div><span class="dish-ta">&#2965;&#3006;&#2995;&#3006;&#2985;&#3021; 65</span></div>
+      </div>
+
+      <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F36E; Desserts</span><div class="sub-heading-line"></div></div>
+      <div class="dish-list" id="list-lunch-veg-desserts">
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Milk Payasam</span></div><span class="dish-ta">&#2986;&#3006;&#2994;&#3021; &#2986;&#3006;&#2991;&#3006;&#2970;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Moong Dal Payasam</span></div><span class="dish-ta">&#2986;&#3006;&#2970;&#3007;&#2986;&#3021;&#2986;&#2992;&#3009;&#2986;&#3021;&#2986;&#3009; &#2986;&#3006;&#2991;&#3006;&#2970;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Sago Coconut Milk Payasam</span></div><span class="dish-ta">&#2972;&#2997;&#3021;&#2997;&#2992;&#3007;&#2970;&#3007; &#2980;&#3015;&#2969;&#3021;&#2965;&#3006;&#2991;&#3021; &#2986;&#3006;&#2994;&#3021; &#2986;&#3006;&#2991;&#3006;&#2970;&#2990;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-veg"></span><span>Wheat Sooji Payasam</span></div><span class="dish-ta">&#2965;&#3019;&#2980;&#3009;&#2990;&#3016; &#2992;&#2997;&#3016; &#2986;&#3006;&#2991;&#3006;&#2970;&#2990;&#3021;</span></div>
+      </div>
+    </div>
+
+    <!-- NON-VEG TAB -->
+    <div class="tab-panel" id="panel-nonveg">
+      <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F357; Main Dishes</span><div class="sub-heading-line"></div></div>
+      <div class="dish-list" id="list-lunch-nv-main">
+        <div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Mutton Biryani</span></div><span class="dish-ta">&#2990;&#2975;&#3021;&#2975;&#2985;&#3021; &#2986;&#3007;&#2992;&#3007;&#2991;&#3006;&#2979;&#3007;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Chicken Biryani</span></div><span class="dish-ta">&#2970;&#3007;&#2965;&#3021;&#2965;&#2985;&#3021; &#2986;&#3007;&#2992;&#3007;&#2991;&#3006;&#2979;&#3007;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Mutton Curry</span></div><span class="dish-ta">&#2990;&#2975;&#3021;&#2975;&#2985;&#3021; &#2965;&#3009;&#2996;&#2990;&#3021;&#2986;&#3009;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Country Chicken Curry</span></div><span class="dish-ta">&#2984;&#3006;&#2975;&#3021;&#2975;&#3009;&#2965;&#3021;&#2965;&#3019;&#2996;&#3007; &#2965;&#3009;&#2956;&#2990;&#3021;&#2986;&#3009;</span></div>
+      </div>
+
+      <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F966; Side Dishes</span><div class="sub-heading-line"></div></div>
+      <div class="dish-list" id="list-lunch-nv-sides">
+<div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Chicken Pepper Chops</span></div><span class="dish-ta">&#2970;&#3007;&#2965;&#3021;&#2965;&#2985;&#3021; &#2990;&#3007;&#2995;&#2965;&#3009; &#2970;&#3006;&#2986;&#3021;&#3000;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Chicken 65</span></div><span class="dish-ta">&#2970;&#3007;&#2965;&#3021;&#2965;&#2985;&#3021; 65</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Garlic Chicken</span></div><span class="dish-ta">&#2986;&#3010;&#2979;&#3021;&#2975;&#3009; &#2970;&#3007;&#2965;&#3021;&#2965;&#2985;&#3021;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Quail Roast</span></div><span class="dish-ta">&#2965;&#3006;&#2975;&#3016; &#2992;&#3019;&#3000;&#3021;&#2975;&#3021;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Fish Roast</span></div><span class="dish-ta">&#2990;&#3008;&#2985;&#3021; &#2992;&#3019;&#3000;&#3021;&#2975;&#3021;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Mutton Balls</span></div><span class="dish-ta">&#2990;&#2975;&#3021;&#2975;&#2985;&#3021; &#2953;&#2992;&#3009;&#2979;&#3021;&#2975;&#3016;</span></div>
+        <div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Egg Gravy</span></div><span class="dish-ta">&#2990;&#3009;&#2975;&#3021;&#2975;&#3016; &#2965;&#3007;&#2992;&#3015;&#2997;&#3007;</span></div>
+<div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Scrambled Egg</span></div><span class="dish-ta">&#2990;&#3009;&#2975;&#3021;&#2975;&#3016; &#2986;&#3018;&#2992;&#3007;&#2991;&#2994;&#3021;</span></div>
+      </div>
+
+      <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F36E; Dessert</span><div class="sub-heading-line"></div></div>
+      <div class="dish-list" id="list-lunch-nv-dessert">
+        <div class="dish-row"><div class="dish-left"><span class="badge-nonveg"></span><span>Beerni</span></div><span class="dish-ta">&#2986;&#3008;&#2992;&#3021;&#2985;&#3007;</span></div>
+      </div>
+      <div class="no-results" style="display:none" id="no-lunch">No dishes found</div>
+    </div>
+  </div>
+  <footer class="mini-footer"><a href="index.html" class="mf-logo">Priya Mess</a><span class="mf-copy">&#169; 2026 Priya Mess &amp; Catering</span><a href="index.html#booking" class="mf-link">Book Now &#x2192;</a></footer>
+</div>
+
+<!-- ======================================================
+     PAGE 5 — DINNER
+====================================================== -->
+<div class="page" id="page-dinner">
+  <div class="det-page">
+    <div class="det-banner">
+      <img src="dinner_category.png" alt="Dinner">
+      <div class="det-banner-ov"></div>
+      <div class="det-banner-bar"></div>
+      <div class="det-banner-cnt">
+        <div class="back-btn" onclick="goBack()" tabindex="0" role="button">Back to Menu</div>
+        <span class="det-eyebrow">&#x1F319; &nbsp;Evening Feast</span>
+<h1 class="det-title">Dinner &mdash;<br><em>&#2951;&#2992;&#2997;&#3009; &#2953;&#2979;&#2997;&#3009;</em></h1>
+        <span class="det-count-badge">9 Dishes &nbsp;+&nbsp; 3 Drinks</span>
+      </div>
+    </div>
+    <div class="search-wrap"><div class="search-box">
+      <span class="search-icon">&#x1F50D;</span>
+      <input type="text" id="search-dinner" placeholder="Search dinner items..." oninput="filterDishes('dinner',this.value)">
+    </div></div>
+
+    <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F319; Dinner Items</span><div class="sub-heading-line"></div></div>
+    <div class="dish-list" id="list-dinner">
+      <div class="dish-row"><div class="dish-left"><span>Idly</span></div><span class="dish-ta">&#2951;&#2975;&#3021;&#2994;&#3007;</span></div>
+<div class="dish-row"><div class="dish-left"><span>Uthappam</span></div><span class="dish-ta">&#2954;&#2980;&#3021;&#2980;&#3006;&#2986;&#3021;&#2986;&#2990;&#3021;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Masala Dosa</span></div><span class="dish-ta">&#2990;&#2970;&#3006;&#2994;&#3006; &#2980;&#3019;&#2970;&#3016;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Variety of Dosa</span></div><span class="dish-ta">&#2986;&#2994;&#2997;&#2965;&#3016; &#2980;&#3019;&#2970;&#3016;&#2965;&#2995;&#3021;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Chapathi</span></div><span class="dish-ta">&#2970;&#2986;&#3021;&#2986;&#3006;&#2980;&#3021;&#2980;&#3007;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Parotta</span></div><span class="dish-ta">&#2986;&#2992;&#3019;&#2975;&#3021;&#2975;&#3006;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Kothu Parotta</span></div><span class="dish-ta">&#2965;&#3018;&#2980;&#3021;&#2980;&#3009; &#2986;&#2992;&#3019;&#2975;&#3021;&#2975;&#3006;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Chilli Parotta</span></div><span class="dish-ta">&#2970;&#3007;&#2994;&#3021;&#2994;&#3007; &#2986;&#2992;&#3019;&#2975;&#3021;&#2975;&#3006;</span></div>
+      <div class="dish-row"><div class="dish-left"><span>Idiyappam</span></div><span class="dish-ta">&#2951;&#2975;&#3007;&#2991;&#3006;&#2986;&#3021;&#2986;&#2990;&#3021;</span></div>
+      <div class="no-results" style="display:none" id="no-dinner">No items found</div>
+    </div>
+
+    <div class="sub-heading"><div class="sub-heading-line"></div><span class="sub-heading-text">&#x1F95B; Drinks</span><div class="sub-heading-line"></div></div>
+    <div class="dish-list">
+      <div class="dish-row drink-row"><div class="dish-left"><span>Badam Milk</span></div><span class="dish-ta">&#2986;&#3006;&#2980;&#3006;&#2990;&#3021; &#2986;&#3006;&#2994;&#3021;</span></div>
+      <div class="dish-row drink-row"><div class="dish-left"><span>Milk</span></div><span class="dish-ta">&#2986;&#3006;&#2994;&#3021;</span></div>
+      <div class="dish-row drink-row"><div class="dish-left"><span>Masala Milk</span></div><span class="dish-ta">&#2990;&#2970;&#3006;&#2994;&#3006; &#2986;&#3006;&#2994;&#3021;</span></div>
+    </div>
+  </div>
+  <footer class="mini-footer"><a href="index.html" class="mf-logo">Priya Mess</a><span class="mf-copy">&#169; 2026 Priya Mess &amp; Catering</span><a href="index.html#booking" class="mf-link">Book Now &#x2192;</a></footer>
+</div>
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+<script>
+(function(){
+
+/* ── Cursor ── */
+var cur=document.getElementById('cur');
+var clocheSVG='<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M 4 23 C 4 23, 16 26, 28 23" stroke="#C9A84C" stroke-width="1.8" /><path d="M 2 21 C 2 21, 16 25, 30 21" stroke="#C9A84C" stroke-width="1.2" opacity="0.8" /><path d="M 6 21 C 6 11, 26 11, 26 21 Z" fill="#C9A84C" fill-opacity="0.15" stroke="#C9A84C" stroke-width="1.8" /><circle cx="16" cy="9" r="2" fill="#C9A84C" stroke="#8C7230" stroke-width="0.8" /><path d="M 16 11 L 16 9" stroke="#8C7230" stroke-width="1.2" /></g></svg>';
+var clocheHoverSVG='<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M 12 18 Q 10 14, 11 12 T 13 8" stroke="#E07B39" stroke-width="1.2" stroke-dasharray="6, 6" opacity="0.8"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.5s" repeatCount="indefinite"/></path><path d="M 20 18 Q 22 15, 21 13 T 19 9" stroke="#E07B39" stroke-width="1.2" stroke-dasharray="6, 6" opacity="0.8"><animate attributeName="stroke-dashoffset" values="12;0" dur="1.5s" repeatCount="indefinite"/></path><path d="M 8 21 C 10 17, 22 17, 24 21 Z" fill="#E07B39" fill-opacity="0.3" stroke="#E07B39" stroke-width="1.2" /><path d="M 4 23 C 4 23, 16 26, 28 23" stroke="#E07B39" stroke-width="1.8" /><path d="M 2 21 C 2 21, 16 25, 30 21" stroke="#E07B39" stroke-width="1.2" opacity="0.8" /><g transform="translate(0, -5) rotate(-5 16 16)"><path d="M 6 21 C 6 11, 26 11, 26 21 Z" fill="#C9A84C" fill-opacity="0.25" stroke="#C9A84C" stroke-width="1.8" /><circle cx="16" cy="9" r="2" fill="#C9A84C" stroke="#8C7230" stroke-width="0.8" /><path d="M 16 11 L 16 9" stroke="#8C7230" stroke-width="1.2" /></g></g></svg>';
+cur.innerHTML=clocheSVG;
+document.addEventListener('mousemove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';});
+document.querySelectorAll('a,button,.cat-card,.dish-row,.back-btn').forEach(function(el){
+  el.addEventListener('mouseenter',function(){cur.innerHTML=clocheHoverSVG;cur.classList.add('hov');});
+  el.addEventListener('mouseleave',function(){cur.innerHTML=clocheSVG;cur.classList.remove('hov');});
+});
+
+/* ── Nav scroll ── */
+window.addEventListener('scroll',function(){
+  document.getElementById('nav').classList.toggle('sc',window.scrollY>50);
+},{passive:true});
+
+/* ── Mobile nav ── */
+document.getElementById('hbg').addEventListener('click',function(){document.getElementById('mnv').classList.add('open');});
+document.getElementById('mnvc').addEventListener('click',function(){document.getElementById('mnv').classList.remove('open');});
+
+/* ── Reveal on scroll ── */
+var rObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rev').forEach(function(r){rObs.observe(r);});
+
+/* ── Page navigation ── */
+var history=[];
+function showPage(id){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+window.openCategory=function(cat){
+  history.push('main');
+  showPage(cat);
+};
+window.goBack=function(){
+  showPage(history.pop()||'main');
+};
+
+/* ── Lunch tab switch ── */
+window.switchTab=function(tab){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('tab-'+tab).classList.add('active');
+  document.getElementById('panel-'+tab).classList.add('active');
+};
+
+/* ── Search / filter ── */
+window.filterDishes=function(cat,query){
+  var q=query.toLowerCase().trim();
+
+  if(cat==='sweets'){
+    var rows=document.querySelectorAll('#list-sweets .dish-row');
+    var found=0;
+    rows.forEach(function(r){
+      var match=r.textContent.toLowerCase().indexOf(q)!==-1;
+      r.classList.toggle('hidden',!match);
+      if(match)found++;
+    });
+    document.getElementById('no-sweets').style.display=found===0?'block':'none';
+  }
+
+  if(cat==='breakfast'){
+    var rows=document.querySelectorAll('#list-breakfast .dish-row');
+    var found=0;
+    rows.forEach(function(r){
+      var match=r.textContent.toLowerCase().indexOf(q)!==-1;
+      r.classList.toggle('hidden',!match);
+      if(match)found++;
+    });
+    document.getElementById('no-breakfast').style.display=found===0?'block':'none';
+  }
+
+  if(cat==='lunch'){
+    var lists=['list-lunch-veg-main','list-lunch-veg-rice','list-lunch-veg-sides',
+               'list-lunch-veg-desserts','list-lunch-nv-main','list-lunch-nv-sides',
+               'list-lunch-nv-dessert'];
+    var found=0;
+    lists.forEach(function(lid){
+      var el=document.getElementById(lid);
+      if(!el)return;
+      el.querySelectorAll('.dish-row').forEach(function(r){
+        var match=q===''||r.textContent.toLowerCase().indexOf(q)!==-1;
+        r.classList.toggle('hidden',!match);
+        if(match)found++;
+      });
+    });
+    document.getElementById('no-lunch').style.display=found===0&&q!==''?'block':'none';
+    /* Auto-switch tab to show results */
+    if(q!==''){
+      var vegFound=0,nvFound=0;
+      ['list-lunch-veg-main','list-lunch-veg-rice','list-lunch-veg-sides','list-lunch-veg-desserts'].forEach(function(lid){
+        var el=document.getElementById(lid);
+        if(el)el.querySelectorAll('.dish-row:not(.hidden)').forEach(function(){vegFound++;});
+      });
+      if(vegFound>0){switchTab('veg');}else{switchTab('nonveg');}
+    }
+  }
+
+  if(cat==='dinner'){
+    var rows=document.querySelectorAll('#list-dinner .dish-row');
+    var found=0;
+    rows.forEach(function(r){
+      var match=r.textContent.toLowerCase().indexOf(q)!==-1;
+      r.classList.toggle('hidden',!match);
+      if(match)found++;
+    });
+    document.getElementById('no-dinner').style.display=found===0?'block':'none';
+  }
+};
+
+/* ── Keyboard nav for cards ── */
+document.querySelectorAll('.cat-card').forEach(function(c){
+  c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')c.click();});
+});
+document.querySelectorAll('.back-btn').forEach(function(b){
+  b.addEventListener('keydown',function(e){if(e.key==='Enter')goBack();});
+});
+
+})();
+</script>
+</body>
+</html>
