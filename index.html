@@ -566,7 +566,7 @@ nav.sc .nls a:hover{
     display: none;
   }
   .why-card.active, .why-card:hover{
-    transform: none;
+    transform: translateY(-4px);
   }
 }
 
@@ -2832,18 +2832,30 @@ var whyCards = document.querySelectorAll('.why-card');
 var whyPlate = document.querySelector('.visual-plate');
 var whyTools = document.querySelectorAll('.floating-tool');
 
+function activateWhyCard(card, idx) {
+  whyCards.forEach(function(c){ c.classList.remove('active'); });
+  whyTools.forEach(function(t){ t.classList.remove('active'); });
+  
+  card.classList.add('active');
+  var matchingTool = document.querySelector('.floating-tool[data-index="' + idx + '"]');
+  if (matchingTool) matchingTool.classList.add('active');
+  
+  if (whyPlate) {
+    whyPlate.style.transform = 'rotate(' + (-idx * 60) + 'deg)';
+  }
+}
+
 whyCards.forEach(function(card, idx) {
   card.addEventListener('mouseenter', function() {
-    whyCards.forEach(function(c){ c.classList.remove('active'); });
-    whyTools.forEach(function(t){ t.classList.remove('active'); });
-    
-    card.classList.add('active');
-    var matchingTool = document.querySelector('.floating-tool[data-index="' + idx + '"]');
-    if (matchingTool) matchingTool.classList.add('active');
-    
-    if (whyPlate) {
-      whyPlate.style.transform = 'rotate(' + (-idx * 60) + 'deg)';
-    }
+    activateWhyCard(card, idx);
+  });
+  card.addEventListener('click', function(e) {
+    activateWhyCard(card, idx);
+    var r = card.getBoundingClientRect();
+    var x = e.clientX ? (e.clientX - r.left) : (r.width / 2);
+    var y = e.clientY ? (e.clientY - r.top) : (r.height / 2);
+    card.style.setProperty('--mouse-x', x + 'px');
+    card.style.setProperty('--mouse-y', y + 'px');
   });
 });
 
