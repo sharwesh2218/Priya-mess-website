@@ -1238,17 +1238,49 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   box-shadow: 0 8px 30px rgba(201, 168, 76, 0.25);
 }
 @media(max-width:768px) {
-  .bk-glass-card {
-    padding: 30px 20px;
-    border-radius: 20px;
-    margin-top: 30px;
+  #booking {
+    padding: 80px 16px;
   }
+  .bkc {
+    padding: 0 8px;
+  }
+  .bkt {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    margin-bottom: 12px;
+  }
+  .bks {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  .bk-glass-card {
+    padding: 40px 20px;
+    border-radius: 24px;
+    margin-top: 15px;
+  }
+  .bk-corner {
+    opacity: 0.25;
+  }
+  .bk-tl { top: 14px; left: 14px; }
+  .bk-tr { top: 14px; right: 14px; }
+  .bk-bl { bottom: 14px; left: 14px; }
+  .bk-br { bottom: 14px; right: 14px; }
+  
+  .bk-glass-card:hover .bk-tl { top: 10px; left: 10px; }
+  .bk-glass-card:hover .bk-tr { top: 10px; right: 10px; }
+  .bk-glass-card:hover .bk-bl { bottom: 10px; left: 10px; }
+  .bk-glass-card:hover .bk-br { bottom: 10px; right: 10px; }
+  
   .bkf-premium {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 22px;
   }
   .bk-full-width {
     grid-column: span 1;
+  }
+  .bki2 {
+    padding: 14px 16px;
+    font-size: 0.9rem;
   }
   .bk-meals-group {
     display: grid;
@@ -1260,41 +1292,39 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
-  .meal-chip, .food-chip {
-    min-width: 0;
+  .meal-chip span, .food-chip span {
+    padding: 12px 8px;
+    font-size: 0.78rem;
+    border-radius: 10px;
+    height: auto;
+    min-height: 42px;
   }
   .bk-actions {
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
+    margin-top: 24px;
   }
   .bk-wa-btn, .bk-call-btn2 {
     width: 100%;
-    max-width: 320px;
+    max-width: 100%;
+    height: 48px;
+    font-size: 0.82rem;
   }
 }
-@media(max-width:480px) {
-  #booking {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    padding-top: 80px;
-    padding-bottom: 80px;
+
+@media(max-width:360px) {
+  .bk-food-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bk-food-group .food-chip:nth-child(3) {
+    grid-column: span 2;
   }
   .bk-glass-card {
-    padding: 30px 16px;
-    border-radius: 16px;
+    padding: 32px 14px;
   }
   .bkt {
-    font-size: 1.6rem;
-  }
-  .bks {
-    font-size: 0.9rem;
-    margin-bottom: 30px;
-  }
-  .meal-chip span, .food-chip span {
-    padding: 12px 8px;
-    font-size: 0.76rem;
-    height: 44px;
+    font-size: 1.5rem;
   }
 }
 
